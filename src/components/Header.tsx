@@ -2,6 +2,7 @@
 import {
   Avatar,
   Box,
+  Chip,
   Divider,
   Dropdown,
   IconButton,
@@ -79,9 +80,13 @@ export const Header = () => {
             </Dropdown>
           )
         ) : (
-          <IconButton color="primary" onClick={() => navigate("/")}>
-            <HomeIcon />
-          </IconButton>
+          <Chip
+            color="primary"
+            onClick={() => navigate("/")}
+            startDecorator={<HomeIcon />}
+          >
+            home
+          </Chip>
         )}
 
         {/* divider */}
