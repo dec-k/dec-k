@@ -8,19 +8,19 @@ export const About = () => {
     >
       <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
         <CardCover>
-          <img
-            src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            loading="lazy"
-          />
+          <img src="src\assets\dada.jpg" loading="lazy" />
         </CardCover>
         <CardContent>
           <Typography
-            level="body-lg"
+            level="title-lg"
             fontWeight="lg"
             textColor="#fff"
             mt={{ xs: 12, sm: 18 }}
           >
             About
+          </Typography>
+          <Typography level="body-sm" textColor="#fff">
+            Life & Skills
           </Typography>
         </CardContent>
       </Card>
@@ -39,6 +39,9 @@ export const About = () => {
             mt={{ xs: 12, sm: 18 }}
           >
             Mystery Juice
+          </Typography>
+          <Typography level="body-sm" textColor="#fff">
+            Reference guide for safely producing your own E-Liquids.
           </Typography>
         </CardContent>
       </Card>

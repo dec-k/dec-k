@@ -1,11 +1,14 @@
-import { Typography } from "@mui/joy";
+import { Avatar, Stack, Typography } from "@mui/joy";
 
 export const Header = () => {
   return (
-    <>
-      <Typography sx={{ marginBottom: "16px" }} level="h1">
-        Dec Keighley
-      </Typography>
-    </>
+    <Stack direction="row" spacing={2} sx={{ marginBottom: "16px" }}>
+      <Avatar
+        alt="dec-k Github Avatar"
+        src="https://avatars.githubusercontent.com/u/15150794?v=4"
+        size="lg"
+      />
+      <Typography level="h1">dec-k</Typography>
+    </Stack>
   );
 };
