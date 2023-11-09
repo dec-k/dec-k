@@ -2,22 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "@fontsource/inter";
 import { CssVarsProvider, CssBaseline } from "@mui/joy";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { RootLayout } from "./layout/RootLayout.tsx";
-import { About } from "./pages/About.tsx";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      {
-        path: "/",
-        element: <About />,
-      },
-    ],
-  },
-]);
+import { RouterProvider } from "react-router-dom";
+import { router } from "./util/router.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
