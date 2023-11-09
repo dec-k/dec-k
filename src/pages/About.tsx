@@ -27,7 +27,13 @@ export const About = () => {
       </Card>
 
       {/* mj */}
-      <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
+      <Card
+        component="li"
+        sx={{ minWidth: 300, flexGrow: 1, cursor: "pointer" }}
+        onClick={() =>
+          window.open("https://mysteryjuice.vercel.app/", "_blank")
+        }
+      >
         <CardCover>
           <img
             src="https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -45,6 +51,38 @@ export const About = () => {
           </Typography>
           <Typography level="body-sm" textColor="#fff">
             Reference guide for safely producing your own E-Liquids.
+          </Typography>
+        </CardContent>
+      </Card>
+
+      {/* article 1 */}
+      <Card
+        component="li"
+        sx={{ minWidth: 300, flexGrow: 1, cursor: "pointer" }}
+        onClick={() =>
+          window.open(
+            "https://medium.com/@dec.keighley/environment-ego-and-autonomy-d8283fdee56b",
+            "_blank"
+          )
+        }
+      >
+        <CardCover>
+          <img
+            src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            loading="lazy"
+          />
+        </CardCover>
+        <CardContent>
+          <Typography
+            level="body-lg"
+            fontWeight="lg"
+            textColor="#fff"
+            mt={{ xs: 12, sm: 18 }}
+          >
+            Environment, Ego & Autonomy
+          </Typography>
+          <Typography level="body-sm" textColor="#fff">
+            Article about enriching development teams.
           </Typography>
         </CardContent>
       </Card>
