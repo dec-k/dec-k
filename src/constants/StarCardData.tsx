@@ -6,8 +6,8 @@ import dada from "../assets/dada.jpg";
 // this defines the star cards, they are rendered in order.
 export const StarCardData: StarCardProps[] = [
   {
-    title: "About",
-    subtitle: "Life & Skills",
+    title: "About Me",
+    subtitle: "Background, Skills, Passions",
     tag: "fluff",
     src: dada,
     href: "/",
@@ -31,6 +31,13 @@ export const StarCardData: StarCardProps[] = [
     subtitle: "More info coming soon.",
     tag: "projects",
     src: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/",
+  },
+  {
+    title: "About This Site",
+    subtitle: "How did the sausage get made?",
+    tag: "fluff",
+    src: "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/",
   },
 ];
