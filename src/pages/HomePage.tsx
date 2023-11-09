@@ -2,7 +2,7 @@ import { Box } from "@mui/joy";
 import { StarCardData } from "../constants/StarCardData";
 import { StarCard } from "../components/StarCard";
 
-export const About = () => {
+export const HomePage = () => {
   return (
     <Box
       component="ul"

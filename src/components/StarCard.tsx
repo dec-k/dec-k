@@ -2,6 +2,7 @@
 import { Card, CardCover, CardContent, Typography, Chip } from "@mui/joy";
 import { useFilterStore } from "../stores/stores";
 import { TagChipData } from "../constants/ChipData";
+import { useNavigate } from "react-router-dom";
 
 const cardTint: string =
   "linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 300px)";
@@ -20,6 +21,8 @@ export interface StarCardProps {
 }
 
 export const StarCard = (props: StarCardProps) => {
+  const navigate = useNavigate();
+
   const filter = useFilterStore((state: any) => state.filter);
   const chipTag = TagChipData.find((chipData) => chipData.name === props.tag)!;
 
@@ -34,7 +37,14 @@ export const StarCard = (props: StarCardProps) => {
         display: filter === "all" || filter === props.tag ? "inherit" : "none",
         cursor: "pointer",
       }}
-      onClick={() => window.open(props.href, "_blank")}
+      onClick={() => {
+        // use window.open for external links and navigate() for internal routes.
+        if (props.href.includes("https://")) {
+          window.open(props.href, "_blank");
+        } else {
+          navigate(props.href);
+        }
+      }}
     >
       <CardCover>
         <img src={props.src} loading="lazy" />

@@ -10,7 +10,7 @@ export const StarCardData: StarCardProps[] = [
     subtitle: "Background, Skills, Passions",
     tag: "fluff",
     src: dada,
-    href: "/",
+    href: "/about-me",
   },
   {
     title: "Mystery Juice",
