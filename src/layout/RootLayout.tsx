@@ -7,7 +7,6 @@ export const RootLayout = () => {
     <Box
       sx={{
         maxWidth: "968px",
-        border: "1px solid red",
         margin: "auto",
         padding: "16px",
       }}
