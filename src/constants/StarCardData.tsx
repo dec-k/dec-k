@@ -6,7 +6,7 @@ export const StarCardData: StarCardProps[] = [
     title: "About",
     subtitle: "Life & Skills",
     tag: "fluff",
-    src: "src\\assets\\dada.jpg",
+    src: "./src/assets/dada.jpg",
     href: "/",
   },
   {
