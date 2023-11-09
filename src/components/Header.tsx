@@ -4,30 +4,39 @@ import LinkedIn from "@mui/icons-material/LinkedIn";
 
 export const Header = () => {
   return (
-    <Stack direction="row" spacing={2} sx={{ marginBottom: "16px" }}>
-      {/* avatar and title */}
-      <Avatar
-        alt="dec-k Github Avatar"
-        src="https://avatars.githubusercontent.com/u/15150794?v=4"
-        size="lg"
-      />
-      <Typography level="h1">dec-k</Typography>
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{ marginBottom: "16px" }}
+      justifyContent={"space-between"}
+    >
+      <Stack direction="row" spacing={2}>
+        {/* avatar and title */}
+        <Avatar
+          alt="dec-k Github Avatar"
+          src="https://avatars.githubusercontent.com/u/15150794?v=4"
+          size="lg"
+        />
+        <Typography level="h1">dec-k</Typography>
+      </Stack>
 
       {/* socials */}
       <Box
         sx={{
           display: "flex",
-          gap: 200,
+          gap: 1,
           flexWrap: "wrap",
           alignItems: "center",
         }}
       >
+        {/* gh */}
         <IconButton
           onClick={() => window.open("https://github.com/dec-k", "_blank")}
         >
           <GitHubIcon />
         </IconButton>
 
+        {/* li */}
         <IconButton
           onClick={() =>
             window.open(
