@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardCover, Stack, Typography } from "@mui/joy";
+import { Box, Card, CardContent, CardCover, Typography } from "@mui/joy";
 
 export const About = () => {
   return (
