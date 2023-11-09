@@ -9,7 +9,13 @@ export const Header = () => {
     <Stack
       direction="row"
       spacing={2}
-      sx={{ marginBottom: "16px" }}
+      sx={{
+        paddingBottom: "16px",
+        position: "sticky",
+        top: 0,
+        zIndex: 2,
+        backgroundColor: "#FFF",
+      }}
       justifyContent={"space-between"}
     >
       <Stack direction="row" spacing={2}>
