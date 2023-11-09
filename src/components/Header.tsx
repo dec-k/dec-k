@@ -1,19 +1,39 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Avatar, Box, Divider, IconButton, Stack, Typography } from "@mui/joy";
+import {
+  Avatar,
+  Box,
+  Divider,
+  Dropdown,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  Stack,
+  Typography,
+} from "@mui/joy";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedIn from "@mui/icons-material/LinkedIn";
+import Apps from "@mui/icons-material/Apps";
 import { FilterChips } from "./FilterChips";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
   return (
     <Stack
       direction="row"
       spacing={2}
       sx={{
         paddingBottom: "16px",
-        position: "sticky",
-        top: 0,
-        zIndex: 2,
         backgroundColor: "#FFF",
       }}
       justifyContent={"space-between"}
@@ -23,9 +43,9 @@ export const Header = () => {
         <Avatar
           alt="dec-k Github Avatar"
           src="https://avatars.githubusercontent.com/u/15150794?v=4"
-          size="lg"
+          size={matches ? "lg" : "sm"}
         />
-        <Typography level="h1">dec-k</Typography>
+        <Typography level={matches ? "h1" : "h3"}>dec-k</Typography>
       </Stack>
 
       {/* socials + filters */}
@@ -38,7 +58,20 @@ export const Header = () => {
         }}
       >
         {/* chippies */}
-        <FilterChips />
+        {matches ? (
+          <FilterChips />
+        ) : (
+          <Dropdown>
+            <MenuButton variant="soft">
+              <Apps />
+            </MenuButton>
+            <Menu sx={{ padding: "8px" }}>
+              <Stack spacing={1}>
+                <FilterChips />
+              </Stack>
+            </Menu>
+          </Dropdown>
+        )}
 
         {/* divider */}
         <Divider orientation="vertical" />
