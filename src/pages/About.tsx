@@ -6,6 +6,7 @@ export const About = () => {
       component="ul"
       sx={{ display: "flex", gap: 2, flexWrap: "wrap", p: 0, m: 0 }}
     >
+      {/* about */}
       <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
         <CardCover>
           <img src="src\assets\dada.jpg" loading="lazy" />
@@ -24,6 +25,8 @@ export const About = () => {
           </Typography>
         </CardContent>
       </Card>
+
+      {/* mj */}
       <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
         <CardCover>
           <img
@@ -42,6 +45,29 @@ export const About = () => {
           </Typography>
           <Typography level="body-sm" textColor="#fff">
             Reference guide for safely producing your own E-Liquids.
+          </Typography>
+        </CardContent>
+      </Card>
+
+      {/* comingsoon */}
+      <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
+        <CardCover>
+          <img
+            src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            loading="lazy"
+          />
+        </CardCover>
+        <CardContent>
+          <Typography
+            level="body-lg"
+            fontWeight="lg"
+            textColor="#fff"
+            mt={{ xs: 12, sm: 18 }}
+          >
+            Gamified Task Tracker
+          </Typography>
+          <Typography level="body-sm" textColor="#fff">
+            More info coming soon.
           </Typography>
         </CardContent>
       </Card>
