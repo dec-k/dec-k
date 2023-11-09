@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, CardCover, CardContent, Typography, Chip } from "@mui/joy";
 import { useFilterStore } from "../stores/stores";
+import { TagChipData } from "../constants/ChipData";
 
 const cardTint: string =
   "linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0) 300px)";
@@ -20,6 +21,7 @@ export interface StarCardProps {
 
 export const StarCard = (props: StarCardProps) => {
   const filter = useFilterStore((state: any) => state.filter);
+  const chipTag = TagChipData.find((chipData) => chipData.name === props.tag)!;
 
   return (
     <Card
@@ -30,6 +32,7 @@ export const StarCard = (props: StarCardProps) => {
         ":hover": hoverGrowShadow,
         transition: "all 0.3s ease",
         display: filter === "all" || filter === props.tag ? "inherit" : "none",
+        cursor: "pointer",
       }}
       onClick={() => window.open(props.href, "_blank")}
     >
@@ -42,7 +45,12 @@ export const StarCard = (props: StarCardProps) => {
         }}
       />
       <CardContent>
-        <Chip>yaaa</Chip>
+        {/* Tag */}
+        <Chip size="sm" color={chipTag.colour}>
+          {chipTag.name}
+        </Chip>
+
+        {/* title */}
         <Typography
           level="title-lg"
           fontWeight="lg"
@@ -51,6 +59,8 @@ export const StarCard = (props: StarCardProps) => {
         >
           {props.title}
         </Typography>
+
+        {/* subtitle */}
         <Typography level="body-sm" textColor="#fff">
           {props.subtitle}
         </Typography>
