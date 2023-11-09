@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, CardCover, CardContent, Typography, Chip } from "@mui/joy";
-import { useFilterStore } from "../stores/stores";
+import { useFilterStore, useStarCardStore } from "../stores/stores";
 import { TagChipData } from "../constants/ChipData";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +26,8 @@ export const StarCard = (props: StarCardProps) => {
   const filter = useFilterStore((state: any) => state.filter);
   const chipTag = TagChipData.find((chipData) => chipData.name === props.tag)!;
 
+  const setStarCard = useStarCardStore((state) => state.setStarCard);
+
   return (
     <Card
       component="li"
@@ -42,6 +44,8 @@ export const StarCard = (props: StarCardProps) => {
         if (props.href.includes("https://")) {
           window.open(props.href, "_blank");
         } else {
+          // Update star card store before redirecting, in case destination route needs to consume meta from this card.
+          setStarCard(props);
           navigate(props.href);
         }
       }}
