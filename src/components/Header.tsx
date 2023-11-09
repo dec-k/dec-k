@@ -13,11 +13,16 @@ import {
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedIn from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import HomeIcon from "@mui/icons-material/Home";
 import Apps from "@mui/icons-material/Apps";
 import { FilterChips } from "./FilterChips";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  // Layout hook to change if we're on small screens.
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 768px)").matches
   );
@@ -57,20 +62,26 @@ export const Header = () => {
           alignItems: "center",
         }}
       >
-        {/* chippies */}
-        {matches ? (
-          <FilterChips />
+        {/* chippies, only rendered on root route. */}
+        {window.location.pathname === "/" ? (
+          matches ? (
+            <FilterChips />
+          ) : (
+            <Dropdown>
+              <MenuButton variant="soft">
+                <Apps />
+              </MenuButton>
+              <Menu sx={{ padding: "8px" }}>
+                <Stack spacing={1}>
+                  <FilterChips />
+                </Stack>
+              </Menu>
+            </Dropdown>
+          )
         ) : (
-          <Dropdown>
-            <MenuButton variant="soft">
-              <Apps />
-            </MenuButton>
-            <Menu sx={{ padding: "8px" }}>
-              <Stack spacing={1}>
-                <FilterChips />
-              </Stack>
-            </Menu>
-          </Dropdown>
+          <IconButton color="primary" onClick={() => navigate("/")}>
+            <HomeIcon />
+          </IconButton>
         )}
 
         {/* divider */}
