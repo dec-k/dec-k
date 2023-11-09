@@ -8,5 +8,5 @@ export interface FilterState {
 export const useFilterStore = create<FilterState>((set) => ({
   filter: "all",
 
-  setFilter: (f: string) => set(() => ({ filter: f })),
+  setFilter: (f) => set(() => ({ filter: f })),
 }));
