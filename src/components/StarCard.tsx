@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Card, CardCover, CardContent, Typography } from "@mui/joy";
+import { Card, CardCover, CardContent, Typography, Chip } from "@mui/joy";
 import { useFilterStore } from "../stores/stores";
 
 const cardTint: string =
@@ -42,6 +42,7 @@ export const StarCard = (props: StarCardProps) => {
         }}
       />
       <CardContent>
+        <Chip>yaaa</Chip>
         <Typography
           level="title-lg"
           fontWeight="lg"

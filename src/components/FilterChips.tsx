@@ -1,6 +1,7 @@
 import { Chip } from "@mui/joy";
 import { useFilterStore } from "../stores/stores";
-import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import { TagChipData } from "../constants/ChipData";
 
 export const FilterChips = () => {
   const filter = useFilterStore((state) => state.filter);
@@ -9,34 +10,15 @@ export const FilterChips = () => {
   return (
     <>
       {/* filter chips */}
-      <Chip
-        color="neutral"
-        startDecorator={filter === "all" && <SentimentSatisfiedAltIcon />}
-        onClick={() => setFilter("all")}
-      >
-        all
-      </Chip>
-      <Chip
-        color="warning"
-        startDecorator={filter === "projects" && <SentimentSatisfiedAltIcon />}
-        onClick={() => setFilter("projects")}
-      >
-        projects
-      </Chip>
-      <Chip
-        color="danger"
-        startDecorator={filter === "articles" && <SentimentSatisfiedAltIcon />}
-        onClick={() => setFilter("articles")}
-      >
-        articles
-      </Chip>
-      <Chip
-        color="success"
-        startDecorator={filter === "fluff" && <SentimentSatisfiedAltIcon />}
-        onClick={() => setFilter("fluff")}
-      >
-        fluff
-      </Chip>
+      {TagChipData.map((tagChip) => (
+        <Chip
+          color={tagChip.colour}
+          startDecorator={filter === tagChip.name && <FilterListIcon />}
+          onClick={() => setFilter(tagChip.name)}
+        >
+          {tagChip.name}
+        </Chip>
+      ))}
     </>
   );
 };
