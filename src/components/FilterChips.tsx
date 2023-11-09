@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Chip } from "@mui/joy";
 import { useFilterStore } from "../stores/stores";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 
 export const FilterChips = () => {
-  const filter = useFilterStore((state: any) => state.filter);
-  const setFilter = useFilterStore((state: any) => state.setFilter);
+  const filter = useFilterStore((state) => state.filter);
+  const setFilter = useFilterStore((state) => state.setFilter);
 
   return (
     <>
