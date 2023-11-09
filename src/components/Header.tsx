@@ -12,6 +12,7 @@ import {
 } from "@mui/joy";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedIn from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 import Apps from "@mui/icons-material/Apps";
 import { FilterChips } from "./FilterChips";
 import { useEffect, useState } from "react";
@@ -92,6 +93,13 @@ export const Header = () => {
           }
         >
           <LinkedIn />
+        </IconButton>
+
+        {/* mail */}
+        <IconButton
+          onClick={() => window.open("mailto:dec.keighley@gmail.com", "_self")}
+        >
+          <EmailIcon />
         </IconButton>
       </Box>
     </Stack>
