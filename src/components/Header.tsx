@@ -51,7 +51,7 @@ export const Header = () => {
           src="https://avatars.githubusercontent.com/u/15150794?v=4"
           size={matches ? "lg" : "sm"}
         />
-        <Typography level={matches ? "h1" : "h3"}>dec-k</Typography>
+        <Typography level={matches ? "h1" : "h4"}>dec-k</Typography>
       </Stack>
 
       {/* socials + filters */}
