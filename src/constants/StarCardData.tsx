@@ -8,7 +8,7 @@ import aboutMd from "../assets/md/about.md";
 export const StarCardData: StarCardProps[] = [
   {
     title: "About Me",
-    subtitle: "Background, Skills, Passions",
+    subtitle: "What I do and who I am.",
     tag: "fluff",
     src: dada,
     href: "/about-me",
