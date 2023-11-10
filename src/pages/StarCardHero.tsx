@@ -11,7 +11,6 @@ import { useStarCardStore } from "../stores/stores";
 import Markdown from "react-markdown";
 import { useEffect, useState } from "react";
 
-// todo: abstract into a starcard hero page, as youll probably want a couple similarly structured pages.
 export const StarCardHero = () => {
   const activeStarCard = useStarCardStore((state) => state.activeStarCard);
   const [mdContent, setMdContent] = useState<string>();
