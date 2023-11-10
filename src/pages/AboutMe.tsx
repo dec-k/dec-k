@@ -7,10 +7,23 @@ import {
   Typography,
 } from "@mui/joy";
 import { useStarCardStore } from "../stores/stores";
+import Markdown from "react-markdown";
+import { useEffect, useState } from "react";
 
 // todo: abstract into a starcard hero page, as youll probably want a couple similarly structured pages.
 export const AboutMe = () => {
   const activeStarCard = useStarCardStore((state) => state.activeStarCard);
+  const [mdContent, setMdContent] = useState<string>();
+
+  useEffect(() => {
+    if (activeStarCard?.bodyMd) {
+      fetch(activeStarCard?.bodyMd)
+        .then((response) => response.text())
+        .then((text) => {
+          setMdContent(text);
+        });
+    }
+  }, [activeStarCard?.bodyMd]);
 
   return (
     <Card>
@@ -32,15 +45,7 @@ export const AboutMe = () => {
             fontWeight="md"
             textColor="text.secondary"
           >
-            Hi! Thanks for visiting. I'm an experienced software developer
-            focused on Web solutions for businesses.
-            <br />
-            <br />I believe in developing practical, empathy-driven solutions
-            that puts User Experience first.
-            <br />
-            <br />
-            My favourite technologies to work with are <b>TypeScript</b>,{" "}
-            <b>Next.js</b>, <b>Vite + React</b>, and <b>C#</b>.
+            <Markdown>{mdContent}</Markdown>
           </Typography>
         </CardContent>
       </CardOverflow>

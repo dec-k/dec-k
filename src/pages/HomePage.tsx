@@ -15,6 +15,7 @@ export const HomePage = () => {
           subtitle={scd.subtitle}
           tag={scd.tag}
           src={scd.src}
+          bodyMd={scd.bodyMd}
         />
       ))}
     </Box>

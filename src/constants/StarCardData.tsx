@@ -1,7 +1,8 @@
 import { StarCardProps } from "../components/StarCard";
 
 // Asset Imports
-import dada from "../assets/dada.jpg";
+import dada from "../assets/images/dada.jpg";
+import aboutMd from "../assets/md/about.md";
 
 // this defines the star cards, they are rendered in order.
 export const StarCardData: StarCardProps[] = [
@@ -11,6 +12,7 @@ export const StarCardData: StarCardProps[] = [
     tag: "fluff",
     src: dada,
     href: "/about-me",
+    bodyMd: aboutMd,
   },
   {
     title: "Mystery Juice",

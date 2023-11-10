@@ -18,6 +18,7 @@ export interface StarCardProps {
   tag: string;
   src: string;
   href: string;
+  bodyMd?: string;
 }
 
 export const StarCard = (props: StarCardProps) => {

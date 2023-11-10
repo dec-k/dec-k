@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { StarCardProps } from "../components/StarCard";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 // Filtering
 export interface FilterState {
@@ -20,8 +21,15 @@ export interface StarCardState {
   setStarCard: (s: StarCardProps) => void;
 }
 
-export const useStarCardStore = create<StarCardState>((set) => ({
-  activeStarCard: null,
-
-  setStarCard: (s) => set(() => ({ activeStarCard: s })),
-}));
+export const useStarCardStore = create<StarCardState>()(
+  persist(
+    (set) => ({
+      activeStarCard: null,
+      setStarCard: (s) => set(() => ({ activeStarCard: s })),
+    }),
+    {
+      name: "starcard-storage", // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+    }
+  )
+);
