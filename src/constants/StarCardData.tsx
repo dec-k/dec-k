@@ -2,7 +2,8 @@ import { StarCardProps } from "../components/StarCard";
 
 // Asset Imports
 import dada from "../assets/images/dada.jpg";
-import aboutMd from "../assets/md/about.md";
+import aboutMd from "../assets/md/aboutMe.md";
+import aboutSite from "../assets/md/aboutSite.md";
 
 // this defines the star cards, they are rendered in order.
 export const StarCardData: StarCardProps[] = [
@@ -40,6 +41,7 @@ export const StarCardData: StarCardProps[] = [
     subtitle: "How did the sausage get made?",
     tag: "fluff",
     src: "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    href: "/",
+    href: "/about-site",
+    bodyMd: aboutSite,
   },
 ];

@@ -4,6 +4,7 @@ import {
   CardContent,
   CardOverflow,
   Divider,
+  LinearProgress,
   Typography,
 } from "@mui/joy";
 import { useStarCardStore } from "../stores/stores";
@@ -11,7 +12,7 @@ import Markdown from "react-markdown";
 import { useEffect, useState } from "react";
 
 // todo: abstract into a starcard hero page, as youll probably want a couple similarly structured pages.
-export const AboutMe = () => {
+export const StarCardHero = () => {
   const activeStarCard = useStarCardStore((state) => state.activeStarCard);
   const [mdContent, setMdContent] = useState<string>();
 
@@ -39,14 +40,17 @@ export const AboutMe = () => {
       <CardOverflow>
         <Divider inset="context" />
         <CardContent orientation="horizontal">
-          {/* Todo: this needs to be moved to a datastore/constants file. not reusable. */}
-          <Typography
-            level="body-md"
-            fontWeight="md"
-            textColor="text.secondary"
-          >
-            <Markdown>{mdContent}</Markdown>
-          </Typography>
+          {mdContent ? (
+            <Typography
+              level="body-md"
+              fontWeight="md"
+              textColor="text.secondary"
+            >
+              <Markdown>{mdContent}</Markdown>
+            </Typography>
+          ) : (
+            <LinearProgress color="neutral" size="lg" />
+          )}
         </CardContent>
       </CardOverflow>
     </Card>
