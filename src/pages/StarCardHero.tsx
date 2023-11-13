@@ -12,32 +12,32 @@ import { useEffect, useState } from "react";
 import { StarCardModel } from "../components/StarCard";
 
 export interface StarCardHeroProps {
-  starCardData: StarCardModel;
+  data: StarCardModel;
 }
 
 export const StarCardHero = (props: StarCardHeroProps) => {
   const [mdContent, setMdContent] = useState<string>();
 
   useEffect(() => {
-    if (props.starCardData?.bodyMd) {
-      fetch(props.starCardData?.bodyMd)
+    if (props.data?.bodyMd) {
+      fetch(props.data?.bodyMd)
         .then((response) => response.text())
         .then((text) => {
           setMdContent(text);
         });
     }
-  }, [props.starCardData?.bodyMd]);
+  }, [props.data?.bodyMd]);
 
   return (
     <Card>
       <CardOverflow>
         <AspectRatio ratio="2">
-          <img src={props.starCardData?.src} loading="lazy" />
+          <img src={props.data?.src} loading="lazy" />
         </AspectRatio>
       </CardOverflow>
       <CardContent>
-        <Typography level="h3">{props.starCardData?.title}</Typography>
-        <Typography level="body-sm">{props.starCardData?.subtitle}</Typography>
+        <Typography level="h3">{props.data?.title}</Typography>
+        <Typography level="body-sm">{props.data?.subtitle}</Typography>
       </CardContent>
       <CardOverflow>
         <Divider inset="context" />

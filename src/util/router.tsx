@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
         path: "/about-me",
         element: (
           <StarCardHero
-            starCardData={StarCardData.find((scd) => scd.title === "About Me")!}
+            data={StarCardData.find((scd) => scd.title === "About Me")!}
           />
         ),
       },
@@ -29,9 +29,7 @@ export const router = createBrowserRouter([
         path: "/about-site",
         element: (
           <StarCardHero
-            starCardData={
-              StarCardData.find((scd) => scd.title === "About This Site")!
-            }
+            data={StarCardData.find((scd) => scd.title === "About This Site")!}
           />
         ),
       },
