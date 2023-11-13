@@ -44,14 +44,17 @@ export const Header = () => {
       }}
       justifyContent={"space-between"}
     >
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} sx={{ cursor: "pointer" }}>
         {/* avatar and title */}
         <Avatar
           alt="dec-k Github Avatar"
           src="https://avatars.githubusercontent.com/u/15150794?v=4"
           size={matches ? "lg" : "sm"}
+          onClick={() => navigate("/")}
         />
-        <Typography level={matches ? "h1" : "h4"}>dec-k</Typography>
+        <Typography level={matches ? "h1" : "h4"} onClick={() => navigate("/")}>
+          dec-k
+        </Typography>
       </Stack>
 
       {/* socials + filters */}
