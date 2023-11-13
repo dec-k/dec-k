@@ -7,34 +7,37 @@ import {
   LinearProgress,
   Typography,
 } from "@mui/joy";
-import { useStarCardStore } from "../stores/stores";
 import Markdown from "react-markdown";
 import { useEffect, useState } from "react";
+import { StarCardModel } from "../components/StarCard";
 
-export const StarCardHero = () => {
-  const activeStarCard = useStarCardStore((state) => state.activeStarCard);
+export interface StarCardHeroProps {
+  starCardData: StarCardModel;
+}
+
+export const StarCardHero = (props: StarCardHeroProps) => {
   const [mdContent, setMdContent] = useState<string>();
 
   useEffect(() => {
-    if (activeStarCard?.bodyMd) {
-      fetch(activeStarCard?.bodyMd)
+    if (props.starCardData?.bodyMd) {
+      fetch(props.starCardData?.bodyMd)
         .then((response) => response.text())
         .then((text) => {
           setMdContent(text);
         });
     }
-  }, [activeStarCard?.bodyMd]);
+  }, [props.starCardData?.bodyMd]);
 
   return (
     <Card>
       <CardOverflow>
         <AspectRatio ratio="2">
-          <img src={activeStarCard?.src} loading="lazy" />
+          <img src={props.starCardData?.src} loading="lazy" />
         </AspectRatio>
       </CardOverflow>
       <CardContent>
-        <Typography level="h3">{activeStarCard?.title}</Typography>
-        <Typography level="body-sm">{activeStarCard?.subtitle}</Typography>
+        <Typography level="h3">{props.starCardData?.title}</Typography>
+        <Typography level="body-sm">{props.starCardData?.subtitle}</Typography>
       </CardContent>
       <CardOverflow>
         <Divider inset="context" />

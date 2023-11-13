@@ -1,4 +1,4 @@
-import { StarCardProps } from "../components/StarCard";
+import { StarCardModel } from "../components/StarCard";
 
 // Asset Imports
 import dada from "../assets/images/dada.jpg";
@@ -6,7 +6,7 @@ import aboutMd from "../assets/md/aboutMe.md";
 import aboutSite from "../assets/md/aboutSite.md";
 
 // this defines the star cards, they are rendered in order.
-export const StarCardData: StarCardProps[] = [
+export const StarCardData: StarCardModel[] = [
   {
     title: "About Me",
     subtitle: "What I do and who I am.",
