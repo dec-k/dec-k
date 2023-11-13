@@ -10,4 +10,5 @@ Oh the actual stack stack? Sure!
 
 - **Vite + React** for the build tooling and framework.
 - **JoyUI** as a lightly-opinionated baseline for some of the components.
+- Session Storage is managed with **Zustand.** _Death to redux. Horribly bloated._
 - Deployment and CI managed via **Vercel**, like everything else.

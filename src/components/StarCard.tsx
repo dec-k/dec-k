@@ -35,10 +35,12 @@ export const StarCard = (props: StarCardProps) => {
       sx={{
         minWidth: 300,
         flexGrow: 1,
-        ":hover": hoverGrowShadow,
         transition: "all 0.3s ease",
         display: filter === "all" || filter === props.tag ? "inherit" : "none",
-        cursor: "pointer",
+
+        // Only apply hover and cursor changes when the link actually has attached content. Helps with WIP links looking clickable.
+        ":hover": props.href === "/" ? null : hoverGrowShadow,
+        cursor: props.href === "/" ? "default" : "pointer",
       }}
       onClick={() => {
         // use window.open for external links and navigate() for internal routes.
