@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, CardCover, CardContent, Typography, Chip } from "@mui/joy";
-import { useFilterStore } from "../stores/stores";
+import { FilterState, useFilterStore } from "../stores/stores";
 import { TagChipData } from "../constants/ChipData";
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +24,7 @@ export interface StarCardModel {
 export const StarCard = (props: StarCardModel) => {
   const navigate = useNavigate();
 
-  const filter = useFilterStore((state: any) => state.filter);
+  const filter = useFilterStore((state: FilterState) => state.filter);
   const chipTag = TagChipData.find((chipData) => chipData.name === props.tag)!;
 
   return (
