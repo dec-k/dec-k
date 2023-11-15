@@ -36,7 +36,7 @@ export const StarCard = (props: StarCardModel) => {
         transition: "all 0.3s ease",
         display: filter === "all" || filter === props.tag ? "inherit" : "none",
 
-        // Only apply hover and cursor changes when the link actually has attached content. Helps with WIP links looking clickable.
+        // Only apply hover and cursor changes when the link actually has non-stubbed. Makes stub content act unclickable.
         ":hover": props.href === "/" ? null : hoverGrowShadow,
         cursor: props.href === "/" ? "default" : "pointer",
       }}
