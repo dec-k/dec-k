@@ -23,6 +23,13 @@ export const StarCardData: StarCardModel[] = [
     href: "https://mysteryjuice.vercel.app/",
   },
   {
+    title: "Spline + Next.js Demo",
+    subtitle: "Playground for 3D Embeds via Spline.",
+    tag: "projects",
+    src: "https://i.imgur.com/zWBS2UI.jpeg",
+    href: "https://spline-3d-performance.vercel.app/",
+  },
+  {
     title: "Environment, Ego & Autonomy",
     subtitle: "Enrich your team by understanding what makes them tick.",
     tag: "articles",
