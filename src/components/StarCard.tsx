@@ -12,8 +12,7 @@ const hoverGrowShadow = {
   transform: "scale(1.01)",
 };
 
-//todo define terminology around StarCardX stuff, its already getting confusing.
-export interface StarCardModel {
+export interface StarPost {
   title: string;
   subtitle: string;
   tag: string;
@@ -22,7 +21,7 @@ export interface StarCardModel {
   bodyMd?: string;
 }
 
-export const StarCard = (props: StarCardModel) => {
+export const StarCard = (props: StarPost) => {
   const navigate = useNavigate();
 
   const filter = useFilterStore((state: FilterState) => state.filter);

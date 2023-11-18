@@ -1,17 +1,15 @@
 import { Box } from "@mui/joy";
-import { StarCard, StarCardModel } from "../components/StarCard";
-import { getStarCards } from "../api/content";
-import { Firestore } from "../util/firebase";
+import { StarCard, StarPost } from "../components/StarCard";
+import { getStarPosts } from "../api/content";
+import { firestore } from "../util/firebase";
 import { useEffect, useState } from "react";
 
 export const HomePage = () => {
-  const [starPosts, setStarPosts] = useState<StarCardModel[]>([]);
+  const [starPosts, setStarPosts] = useState<StarPost[]>([]);
 
   useEffect(() => {
     // fetch card data on load
-    getStarCards(Firestore).then((resp) =>
-      setStarPosts(resp as StarCardModel[])
-    );
+    getStarPosts(firestore).then((resp) => setStarPosts(resp as StarPost[]));
   }, []);
 
   return (

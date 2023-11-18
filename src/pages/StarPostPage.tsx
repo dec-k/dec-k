@@ -9,24 +9,22 @@ import {
 } from "@mui/joy";
 import Markdown from "react-markdown";
 import { useEffect, useState } from "react";
-import { StarCardModel } from "../components/StarCard";
-import { getStarCardById } from "../api/content";
-import { Firestore } from "../util/firebase";
+import { StarPost } from "../components/StarCard";
+import { getStarPostById } from "../api/content";
+import { firestore } from "../util/firebase";
 
-export const StarCardHero = () => {
+export const StarPostPage = () => {
   // State for managing the internal star post data.
-  const [starPostData, setStarPostData] = useState<StarCardModel>();
+  const [starPostData, setStarPostData] = useState<StarPost>();
 
   // State specifically for managing the MD content.
   const [mdContent, setMdContent] = useState<string>();
 
   // Request the right star post based on route. This happens on page load.
   useEffect(() => {
-    // Grab the last chunk of the current route, which will align with a doc id in firestore.
     const routeDocId = window.location.pathname.split("/").pop()!;
-    getStarCardById(Firestore, routeDocId).then((resp) =>
-      // TODO this isn't super safe. Considering revisiting the typesafety of this in the future. Maybe.
-      setStarPostData(resp as StarCardModel)
+    getStarPostById(firestore, routeDocId).then((resp) =>
+      setStarPostData(resp as StarPost)
     );
   }, []);
 

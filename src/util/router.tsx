@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RootLayout } from "../layout/RootLayout.tsx";
 import { HomePage } from "../pages/HomePage.tsx";
-import { StarCardHero } from "../pages/StarCardHero.tsx";
+import { StarPostPage } from "../pages/StarPostPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -17,11 +17,11 @@ export const router = createBrowserRouter([
       // The path MUST align with the ID of the document you're requesting from the gcloud bucket.
       {
         path: "/about-me",
-        element: <StarCardHero />,
+        element: <StarPostPage />,
       },
       {
         path: "/about-site",
-        element: <StarCardHero />,
+        element: <StarPostPage />,
       },
     ],
   },

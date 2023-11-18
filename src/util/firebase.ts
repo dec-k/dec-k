@@ -16,7 +16,6 @@ const firebaseConfig = {
 
 // Export the analytics and app instances out to prevent spinning redundant instances.
 // Also, just saves a lot of boilerplate every time you want to access fbase's API.
-//todo rename these as they can clash with some imports/use wrong syntax.
-export const FirebaseApp = initializeApp(firebaseConfig);
-export const FirebaseAnalytics = getAnalytics(FirebaseApp);
-export const Firestore = getFirestore(FirebaseApp);
+export const firebaseApp = initializeApp(firebaseConfig);
+export const firebaseAnalytics = getAnalytics(firebaseApp);
+export const firestore = getFirestore(firebaseApp);

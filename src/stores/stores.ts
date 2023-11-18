@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { StarCardModel } from "../components/StarCard";
+import { StarPost } from "../components/StarCard";
 
 // Filtering
 export interface FilterState {
@@ -16,8 +16,8 @@ export const useFilterStore = create<FilterState>((set) => ({
 
 // Firebase-related data.
 export interface FirebaseCollectionState {
-  starCardData: StarCardModel[];
-  setStarCardData: (d: StarCardModel[]) => void;
+  starCardData: StarPost[];
+  setStarCardData: (d: StarPost[]) => void;
 }
 
 // This syntax is trippy. See https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md for help.
