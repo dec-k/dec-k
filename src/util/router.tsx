@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import { RootLayout } from "../layout/RootLayout.tsx";
 import { HomePage } from "../pages/HomePage.tsx";
 import { StarCardHero } from "../pages/StarCardHero.tsx";
-import { StarCardData } from "../constants/StarCardData.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -14,24 +13,15 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
 
-      // Really important note about the props here.
-      // I'm too lazy to key these properly, so each StarCardHero must refer to 1 entry in the StarCardData constants.
-      // This reminder is for me in case I change something and completely brick a page because I changed a page title.
+      // Really important note for pages using StarCards!
+      // The path MUST align with the ID of the document you're requesting from the gcloud bucket.
       {
         path: "/about-me",
-        element: (
-          <StarCardHero
-            data={StarCardData.find((scd) => scd.title === "About Me")!}
-          />
-        ),
+        element: <StarCardHero />,
       },
       {
         path: "/about-site",
-        element: (
-          <StarCardHero
-            data={StarCardData.find((scd) => scd.title === "About This Site")!}
-          />
-        ),
+        element: <StarCardHero />,
       },
     ],
   },
