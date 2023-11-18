@@ -1,8 +1,16 @@
 import { Box } from "@mui/joy";
 import { StarCardData } from "../constants/StarCardData";
 import { StarCard } from "../components/StarCard";
+import { getStarCardData } from "../api/content";
+import { Firestore } from "../util/firebase";
+import { useEffect } from "react";
 
 export const HomePage = () => {
+  // todo remove this call later, demo.
+  useEffect(() => {
+    getStarCardData(Firestore).then((resp) => console.log(resp));
+  }, []);
+
   return (
     <Box
       component="ul"
