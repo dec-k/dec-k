@@ -1,4 +1,4 @@
-import { Firestore, collection, getDocs } from "firebase/firestore/lite";
+import { Firestore, collection, getDocs } from "firebase/firestore";
 
 export async function getStarCardData(db: Firestore) {
   // GET star cards
