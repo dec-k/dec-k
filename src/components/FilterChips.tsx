@@ -10,8 +10,9 @@ export const FilterChips = () => {
   return (
     <>
       {/* filter chips */}
-      {TagChipData.map((tagChip) => (
+      {TagChipData.map((tagChip, i) => (
         <Chip
+          key={i}
           color={tagChip.colour}
           startDecorator={filter === tagChip.name && <FilterListIcon />}
           onClick={() => setFilter(tagChip.name)}
