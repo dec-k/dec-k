@@ -19,7 +19,6 @@ export const HomePage = () => {
       component="ul"
       sx={{ display: "flex", gap: 2, flexWrap: "wrap", p: 0, m: 0 }}
     >
-      {/* API Version */}
       {starPosts.map((scd, i) => (
         <StarCard
           key={i}
