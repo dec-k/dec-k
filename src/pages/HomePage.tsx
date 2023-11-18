@@ -8,8 +8,9 @@ export const HomePage = () => {
       component="ul"
       sx={{ display: "flex", gap: 2, flexWrap: "wrap", p: 0, m: 0 }}
     >
-      {StarCardData.map((scd) => (
+      {StarCardData.map((scd, i) => (
         <StarCard
+          key={i}
           href={scd.href}
           title={scd.title}
           subtitle={scd.subtitle}
