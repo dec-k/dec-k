@@ -12,6 +12,7 @@ const hoverGrowShadow = {
   transform: "scale(1.01)",
 };
 
+//todo define terminology around StarCardX stuff, its already getting confusing.
 export interface StarCardModel {
   title: string;
   subtitle: string;
