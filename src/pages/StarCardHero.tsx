@@ -13,12 +13,11 @@ import { StarCardModel } from "../components/StarCard";
 import { getStarCardById } from "../api/content";
 import { Firestore } from "../util/firebase";
 
-export interface StarCardHeroProps {
-  data: StarCardModel;
-}
-
-export const StarCardHero = (props: StarCardHeroProps) => {
+export const StarCardHero = () => {
+  // State for managing the internal star post data.
   const [starPostData, setStarPostData] = useState<StarCardModel>();
+
+  // State specifically for managing the MD content.
   const [mdContent, setMdContent] = useState<string>();
 
   // Request the right star post based on route. This happens on page load.
@@ -31,6 +30,7 @@ export const StarCardHero = (props: StarCardHeroProps) => {
     );
   }, []);
 
+  // When/if bodyMd becomes available, fetch it from the URL and parse it on client.
   useEffect(() => {
     if (starPostData?.bodyMd) {
       fetch(starPostData.bodyMd)
