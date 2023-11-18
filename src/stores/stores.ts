@@ -22,7 +22,7 @@ export interface FirebaseCollectionState {
 
 // This syntax is trippy. See https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md for help.
 // Basically, the ()(...) syntax is for working around a quirk in typescript where generics must be redefined.
-const useFirebaseStore = create<FirebaseCollectionState>()(
+export const useFirebaseStore = create<FirebaseCollectionState>()(
   persist(
     (set) => ({
       starCardData: [],
