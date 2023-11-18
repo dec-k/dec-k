@@ -19,6 +19,5 @@ export async function getStarCards(db: Firestore) {
 export async function getStarCardById(db: Firestore, id: string) {
   const docRef = doc(db, "starPosts", id);
   const docSnap = await getDoc(docRef);
-  debugger;
   return docSnap.data();
 }
