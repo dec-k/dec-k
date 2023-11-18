@@ -7,14 +7,14 @@ import aboutSite from "../assets/md/aboutSite.md";
 
 // this defines the star cards, they are rendered in order.
 export const StarCardData: StarCardModel[] = [
-  {
-    title: "About Me",
-    subtitle: "What I do and who I am.",
-    tag: "fluff",
-    src: dada,
-    href: "/about-me",
-    bodyMd: aboutMd,
-  },
+  // {
+  //   title: "About Me",
+  //   subtitle: "What I do and who I am.",
+  //   tag: "fluff",
+  //   src: dada,
+  //   href: "/about-me",
+  //   bodyMd: aboutMd,
+  // },
   {
     title: "Mystery Juice",
     subtitle: "Reference guide for DIY E-Liquids.",
