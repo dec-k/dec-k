@@ -1,6 +1,13 @@
+export const SupportedFilters = [
+  "all",
+  "projects",
+  "articles",
+  "fluff",
+] as const;
+
 export interface TagChip {
   colour: "neutral" | "warning" | "success" | "danger";
-  name: string;
+  name: (typeof SupportedFilters)[number];
 }
 
 export const TagChipData: TagChip[] = [
