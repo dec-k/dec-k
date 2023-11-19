@@ -15,10 +15,11 @@ const hoverGrowShadow = {
 export interface StarPost {
   title: string;
   subtitle: string;
-  tag: string;
-  src: string;
-  href: string;
-  bodyMd?: string;
+  tag: string; // tag group, used for filtering ( todo: constrain the tags to a supported type to prevent typos, etc.)
+  src: string; // reference to the image content that shows on the card and hero page.
+  href: string; // link to the actual content, either a url or an internal route.
+  order?: number; // optional order. lower numbers will show first on the home page.
+  bodyMd?: string; // optional md. provide a link to hosted MD content, used for internal route pages.
 }
 
 export const StarCard = (props: StarPost) => {

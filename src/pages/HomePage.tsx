@@ -9,7 +9,19 @@ export const HomePage = () => {
 
   useEffect(() => {
     // fetch card data on load
-    getStarPosts(firestore).then((resp) => setStarPosts(resp as StarPost[]));
+    getStarPosts(firestore).then((resp) =>
+      setStarPosts(
+        // sort the resulting posts based on the optional Order field.
+        resp.sort((a, b) => {
+          const orderA =
+            a.order !== undefined ? a.order : Number.MAX_SAFE_INTEGER;
+          const orderB =
+            b.order !== undefined ? b.order : Number.MAX_SAFE_INTEGER;
+
+          return orderA - orderB;
+        })
+      )
+    );
   }, []);
 
   return (
@@ -17,15 +29,15 @@ export const HomePage = () => {
       component="ul"
       sx={{ display: "flex", gap: 2, flexWrap: "wrap", p: 0, m: 0 }}
     >
-      {starPosts.map((scd, i) => (
+      {starPosts.map((sp, i) => (
         <StarCard
           key={i}
-          href={scd.href}
-          title={scd.title}
-          subtitle={scd.subtitle}
-          tag={scd.tag}
-          src={scd.src}
-          bodyMd={scd.bodyMd}
+          href={sp.href}
+          title={sp.title}
+          subtitle={sp.subtitle}
+          tag={sp.tag}
+          src={sp.src}
+          bodyMd={sp.bodyMd}
         />
       ))}
     </Box>
