@@ -2,6 +2,8 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { StarPost } from "../components/StarCard";
 
+// todo: consider splitting the stores out to sep files. at this stage proj is small enough to not worry about it.
+
 // Filtering
 export interface FilterState {
   filter: string;

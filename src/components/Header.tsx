@@ -29,6 +29,7 @@ export const Header = () => {
   );
 
   useEffect(() => {
+    // Adds a listener for when viewport drops below a certain width, switches various layout elems.
     window
       .matchMedia("(min-width: 768px)")
       .addEventListener("change", (e) => setMatches(e.matches));

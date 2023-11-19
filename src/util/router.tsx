@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
 
-      // Really important note for pages using StarCards!
+      // Really important note for pages that rely on the starPost collection.
       // The path MUST align with the ID of the document you're requesting from the gcloud bucket.
       {
         path: "/about-me",
