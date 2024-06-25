@@ -9,6 +9,7 @@ export const RootLayout = () => {
         maxWidth: "968px",
         margin: "auto",
         padding: "16px",
+        pt: 0,
       }}
     >
       <Header />

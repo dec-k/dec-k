@@ -40,20 +40,35 @@ export const Header = () => {
       direction="row"
       spacing={2}
       sx={{
-        paddingBottom: "16px",
-        backgroundColor: "#FFF",
+        borderRadius: 20,
+        px: 2,
+        py: 1,
+        mx: 2,
+        mt: 1,
+
+        backgroundColor: "rgba(255, 255, 255, 0.8)", // Glass effect background color
+        backdropFilter: "blur(10px)", // Glass effect blur
+        position: "sticky",
+        top: 8,
+        zIndex: 1000, // Ensures the header is above other content
+        // boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: Add a subtle shadow for better visibility
       }}
       justifyContent={"space-between"}
     >
-      <Stack direction="row" spacing={2} sx={{ cursor: "pointer" }}>
+      <Stack
+        direction="row"
+        gap={2}
+        sx={{ cursor: "pointer" }}
+        alignItems={"center"}
+      >
         {/* avatar and title */}
         <Avatar
           alt="dec-k Github Avatar"
           src="https://avatars.githubusercontent.com/u/15150794?v=4"
-          size={matches ? "lg" : "sm"}
+          size={matches ? "md" : "sm"}
           onClick={() => navigate("/")}
         />
-        <Typography level={matches ? "h1" : "h4"} onClick={() => navigate("/")}>
+        <Typography level={matches ? "h2" : "h4"} onClick={() => navigate("/")}>
           dec-k
         </Typography>
       </Stack>

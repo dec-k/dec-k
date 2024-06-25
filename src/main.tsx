@@ -7,7 +7,7 @@ import { router } from "./util/router.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <CssVarsProvider>
+    <CssVarsProvider defaultMode="dark">
       <CssBaseline />
       <RouterProvider router={router} />
     </CssVarsProvider>
