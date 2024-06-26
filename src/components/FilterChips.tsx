@@ -14,6 +14,7 @@ export const FilterChips = () => {
         <Chip
           key={i}
           color={tagChip.colour}
+          variant="soft"
           startDecorator={filter === tagChip.name && <FilterListIcon />}
           onClick={() => setFilter(tagChip.name)}
         >
