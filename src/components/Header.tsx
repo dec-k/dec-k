@@ -43,15 +43,13 @@ export const Header = () => {
         borderRadius: 20,
         px: 2,
         py: 1,
-        mx: 2,
+        mx: 0.5,
         mt: 1,
-
         backgroundColor: "rgba(255, 255, 255, 0.8)", // Glass effect background color
         backdropFilter: "blur(10px)", // Glass effect blur
         position: "sticky",
         top: 8,
         zIndex: 1000, // Ensures the header is above other content
-        // boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: Add a subtle shadow for better visibility
       }}
       justifyContent={"space-between"}
     >
@@ -69,7 +67,7 @@ export const Header = () => {
           onClick={() => navigate("/")}
         />
         <Typography level={matches ? "h2" : "h4"} onClick={() => navigate("/")}>
-          dec-k
+          dec<span style={{ color: "grey" }}>dev</span>
         </Typography>
       </Stack>
 
@@ -118,17 +116,19 @@ export const Header = () => {
           <GitHubIcon />
         </IconButton>
 
-        {/* li */}
-        <IconButton
-          onClick={() =>
-            window.open(
-              "https://www.linkedin.com/in/declan-keighley-b19265a6/",
-              "_blank"
-            )
-          }
-        >
-          <LinkedIn />
-        </IconButton>
+        {/* li - hidden on mobile. nobody gives a shit about linkedin anyway.*/}
+        {matches && (
+          <IconButton
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/declan-keighley-b19265a6/",
+                "_blank"
+              )
+            }
+          >
+            <LinkedIn />
+          </IconButton>
+        )}
 
         {/* mail */}
         <IconButton
