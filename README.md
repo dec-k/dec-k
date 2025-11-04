@@ -1,5 +1,5 @@
 # 👋 
 
-Yo. [Things I've made here.](https://dec.vercel.app)
+Fullstack, mainly frontend focused.
 
-**Battle-tested dev. Mainly web.**
+**react / svelte / csharp / node**
