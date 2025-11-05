@@ -1,5 +1,5 @@
-# 👋 
+hey 👋 
 
-Fullstack, mainly frontend focused.
+senior developer @ smudge.
 
-**react / svelte / csharp / node**
+mostly web-focused - reach out any time for a chat!
