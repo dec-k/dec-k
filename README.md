@@ -1,5 +1,9 @@
-hey 👋 
+Hey! 👋
 
-senior developer @ smudge.
+Current side-project is [Guildlost](www.guildlost.vercel.app), an incremental idle game built in Svelte and inspired by games like OSRS and Tibia.
 
-mostly web-focused - reach out any time for a chat!
+---
+
+I'm also a Senior Developer at [Smudge](www.smudge.com), mostly focused on web.
+
+Always happy for a yarn, feel free to reach out.
