@@ -1,6 +1,6 @@
 Hey! 👋
 
-Current side-project is [Guildlost](https://www.guildlost.vercel.app), an incremental idle game built in Svelte and inspired by games like OSRS and Tibia.
+Current side-project is [Guildlost](https://guildlost.vercel.app), an incremental idle game built in Svelte and inspired by games like OSRS and Tibia.
 
 ---
 
